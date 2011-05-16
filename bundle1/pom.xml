@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ebay.osgi.bundles</groupId>
+	<artifactId>bundle1</artifactId>
+	<version>1.0.0</version>
+	<packaging>bundle</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.sonatype.tycho</groupId>
+			<artifactId>org.eclipse.osgi</artifactId>
+			<version>3.6.2.R36x_v20110210</version>
+		</dependency>
+		
+		<!--  Following are test dependencies ( PAX, Junit ) -->	
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<manifestLocation>BundleContent/META-INF</manifestLocation>
+					<instructions>
+						
+						<!--Web-ContextPath>CONTEXT_PATH</Web-ContextPath -->
+						<Export-Package>bundle1.publicapi</Export-Package> 
+						<Private-Package>bundle1.*</Private-Package> 
+						<Bundle-Activator>bundle1.Activator</Bundle-Activator>
+						<Import-Package>org.osgi.framework,org.osgi.util.tracker</Import-Package>
+						
+						<!--Bundle-ClassPath>BUNDLE_CLASSPATH</Bundle-ClassPath -->
+						<!-- Required for web bundle Import-Package> javax.servlet;version="2.5", 
+							javax.el;version="2.0";resolution:=optional, javax.servlet.jsp.el;version="2.0", 
+							org.osgi.framework, javax.servlet.jsp.tagext;version="2.0", javax.servlet.jsp;version="2.0", 
+							javax.servlet.annotation;version="3.0.0", javax.servlet.http;version="2.5" 
+						</Import-Package -->
+						
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

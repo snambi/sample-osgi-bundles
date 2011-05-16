@@ -1,0 +1,8 @@
+Application-Name: EBA
+Application-SymbolicName: EBA
+Application-ManifestVersion: 1.0
+Application-Version: 1.0.0.qualifier
+Application-Content: com.ebay.osgi.bundles.bundle1;version="1.0.0",
+  com.ebay.osgi.bundles.bundle2;version="1.0.0"
+Manifest-Version: 1.0
+

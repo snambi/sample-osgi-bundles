@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Export-Package: bundle1_test;uses:="org.osgi.framework,org.ops4j.pax.e
+ xam.options,org.ops4j.pax.exam,org.ops4j.pax.exam.spi.reactors,org.op
+ s4j.pax.exam.libraryoptions,org.ops4j.pax.exam.spi.driversupport,org.
+ ops4j.pax.exam.spi,org.ops4j.pax.exam.spi.container,org.junit"
+Built-By: nsankaran
+Tool: Bnd-1.15.0
+Bundle-Name: bundle1-test
+Created-By: Apache Maven Bundle Plugin
+Bundle-Version: 1.0.0.SNAPSHOT
+Build-Jdk: 1.6.0_24
+Bnd-LastModified: 1305152693290
+Bundle-ManifestVersion: 2
+Bundle-Activator: bundle1_test.Activator
+Import-Package: org.junit,org.ops4j.pax.exam,org.ops4j.pax.exam.librar
+ yoptions,org.ops4j.pax.exam.options,org.ops4j.pax.exam.spi,org.ops4j.
+ pax.exam.spi.container,org.ops4j.pax.exam.spi.driversupport,org.ops4j
+ .pax.exam.spi.reactors,org.osgi.framework;version="[1.5,2)"
+Bundle-SymbolicName: com.ebay.osgi.bundles.bundle1-test
+

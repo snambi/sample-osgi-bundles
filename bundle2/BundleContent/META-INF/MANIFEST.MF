@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Export-Package: bundle2.publicapi;uses:="bundle1.publicapi"
+Built-By: nsankaran
+Tool: Bnd-1.15.0
+Bundle-Name: bundle2
+Created-By: Apache Maven Bundle Plugin
+Bundle-Version: 1.0.0
+Build-Jdk: 1.6.0_24
+Bnd-LastModified: 1305331777084
+Bundle-ManifestVersion: 2
+Bundle-Activator: bundle2.Activator
+Import-Package: bundle1.publicapi,org.osgi.framework;version="[1.5,2)"
+ ,org.osgi.util.tracker;version="[1.4,2)"
+Bundle-SymbolicName: com.ebay.osgi.bundles.bundle2
+
