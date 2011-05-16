@@ -44,6 +44,19 @@
 
 		<plugins>
 			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<configuration>
+					<filesets>
+						<fileset>
+						<directory>.</directory>
+						<includes>
+							<include>**/MANIFEST.MF</include>
+						</includes>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<version>2.3.4</version>
@@ -79,6 +92,19 @@
 						<!-- <Private-Package>yourprivatepackage</Private-Package> -->
 					</instructions>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.ebay.osgi.maven</groupId>
+				<artifactId>manifest-validator-plugin</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>validate</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
