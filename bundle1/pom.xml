@@ -83,6 +83,9 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<manifestLocation>BundleContent</manifestLocation>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
