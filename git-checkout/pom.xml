@@ -34,11 +34,28 @@
 				<artifactId>maven-install-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>install-kernel</id>
 						<configuration>
 							<file>target/checkout/com.ebay.kernel-1.0.0.jar</file>
 							<repositoryLayout>default</repositoryLayout>
 							<groupId>com.ebay.kernel</groupId>
 							<artifactId>com.ebay.kernel</artifactId>
+							<version>1.0.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+						<phase>process-resources</phase>
+						<goals>	
+							<goal>install-file</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>install-dal</id>
+						<configuration>
+							<file>target/checkout/com.ebay.kerneldal-1.0.0.jar</file>
+							<repositoryLayout>default</repositoryLayout>
+							<groupId>com.ebay.kernel</groupId>
+							<artifactId>com.ebay.kerneldal</artifactId>
 							<version>1.0.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
