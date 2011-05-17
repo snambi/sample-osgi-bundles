@@ -7,12 +7,18 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
+	<properties>
+		<git.repo>${basedir}/git-checkout/target/checkout</git.repo>
+	</properties>
+
 	<modules>
+		<module>git-checkout</module>
 		<module>bundle1</module>
 		<module>bundle2</module>
+		<module>g3-integration-test</module>
 		<!--
 		<module>EBA</module>
-		<module>bundle-integration-test</module>
+		<module>pax-integration-test</module>
 		-->
 	</modules>
 </project>

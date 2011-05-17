@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ebay.osgi.bundles</groupId>
+	<artifactId>git-checkout</artifactId>
+	<version>1.0.0</version>
+
+	<scm>
+		<connection>scm:git:http://git.qa.ebay.com/RaptorBundles.git</connection>
+		<developerConnection>scm:git:http://git.qa.ebay.com/RaptorBundles.git</developerConnection>
+		<url>scm:git:http://git.qa.ebay.com/RaptorBundles.git</url>
+	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<executions>
+					<execution>
+						<configuration>
+							<connectionType>connection</connectionType>
+							<skipCheckoutIfExists>true</skipCheckoutIfExists>
+						</configuration>
+						<phase>generate-resources</phase>
+						<goals>	
+							<goal>checkout</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<executions>
+					<execution>
+						<configuration>
+							<file>target/checkout/com.ebay.kernel-1.0.0.jar</file>
+							<repositoryLayout>default</repositoryLayout>
+							<groupId>com.ebay.kernel</groupId>
+							<artifactId>com.ebay.kernel</artifactId>
+							<version>1.0.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+						<phase>process-resources</phase>
+						<goals>	
+							<goal>install-file</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
