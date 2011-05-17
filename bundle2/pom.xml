@@ -72,6 +72,8 @@
 				</executions>
 				<configuration>
 					<manifestLocation>BundleContent/META-INF</manifestLocation>
+					<remoteOBR>nambi.obr</remoteOBR>
+					<prefixUrl>http://r2d2:8081/nexus/content/repositories/nambi.obr/</prefixUrl>
 					<instructions>
 						<Bundle-Activator>bundle2.Activator</Bundle-Activator>
 						<Export-Package>
@@ -109,6 +111,37 @@
 					<manifestLocation>BundleContent</manifestLocation>
 				</configuration>
 			</plugin>
+			<plugin>
+				 <groupId>org.apache.maven.plugins</groupId>
+				 <artifactId>maven-dependency-plugin</artifactId>
+				 <executions>
+					 <execution>
+						 <id>copy-to-git</id>
+						 <phase>package</phase>
+						 <goals>
+							 <goal>copy</goal>
+						 </goals>
+						 <configuration>
+							 <artifactItems>
+								 <artifactItem>
+									 <groupId>${project.groupId}</groupId>
+									 <artifactId>${project.artifactId}</artifactId>
+									 <version>${project.version}</version>
+									 <type>${project.packaging}</type>
+								 </artifactItem>
+							 </artifactItems>
+							 <outputDirectory>../git-checkout/target/checkout</outputDirectory>
+							 <stripVersion>true</stripVersion>                    
+						 </configuration>
+					 </execution>                        
+				 </executions>
+			 </plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>nambi.obr</id>
+			<url>http://r2d2:8081/nexus/content/repositories/nambi.obr</url>
+		</repository>
+	</distributionManagement>
 </project>

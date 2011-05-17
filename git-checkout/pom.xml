@@ -4,6 +4,7 @@
 	<groupId>com.ebay.osgi.bundles</groupId>
 	<artifactId>git-checkout</artifactId>
 	<version>1.0.0</version>
+	<packaging>pom</packaging>
 
 	<scm>
 		<connection>scm:git:http://git.qa.ebay.com/RaptorBundles.git</connection>
@@ -69,4 +70,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>nambi.obr</id>
+			<url>http://r2d2:8081/nexus/content/repositories/nambi.obr</url>
+		</repository>
+	</distributionManagement>
 </project>

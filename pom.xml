@@ -15,10 +15,11 @@
 		<module>git-checkout</module>
 		<module>bundle1</module>
 		<module>bundle2</module>
-		<module>g3-integration-test</module>
 		<!--
+		<module>g3-integration-test</module>
 		<module>EBA</module>
 		<module>pax-integration-test</module>
 		-->
 	</modules>
+
 </project>
