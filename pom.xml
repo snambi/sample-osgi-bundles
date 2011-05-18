@@ -22,4 +22,10 @@
 		-->
 	</modules>
 
+	<distributionManagement>
+		<repository>
+			<id>nambi.obr</id>
+			<url>http://r2d2:8081/nexus/content/repositories/nambi.obr/</url>
+		</repository>
+	</distributionManagement>
 </project>
