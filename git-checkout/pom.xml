@@ -21,7 +21,9 @@
 					<execution>
 						<configuration>
 							<connectionType>connection</connectionType>
+							<!--
 							<skipCheckoutIfExists>true</skipCheckoutIfExists>
+							-->
 						</configuration>
 						<phase>generate-resources</phase>
 						<goals>	
