@@ -12,6 +12,9 @@
 		<url>scm:git:http://git.qa.ebay.com/RaptorBundles.git</url>
 	</scm>
 
+	<properties>
+		<git.repo>../../raptor.bundles.git.repo</git.repo>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -19,15 +22,28 @@
 				<artifactId>maven-scm-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>checkout-project</id>
 						<configuration>
+							<checkoutDirectory>${git.repo}</checkoutDirectory>
+							<connectionUrl>scm:git:http://git.qa.ebay.com/RaptorBundles.git</connectionUrl>
 							<connectionType>connection</connectionType>
-							<!--
 							<skipCheckoutIfExists>true</skipCheckoutIfExists>
-							-->
 						</configuration>
 						<phase>generate-resources</phase>
 						<goals>	
 							<goal>checkout</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>update-project</id>
+						<configuration>
+							<workingDirectory>${git.repo}</workingDirectory>
+							<connectionUrl>scm:git:http://git.qa.ebay.com/RaptorBundles.git</connectionUrl>
+							<connectionType>connection</connectionType>
+						</configuration>
+						<phase>generate-resources</phase>
+						<goals>	
+							<goal>update</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -39,7 +55,7 @@
 					<execution>
 						<id>install-kernel</id>
 						<configuration>
-							<file>target/checkout/com.ebay.kernel-1.0.0.jar</file>
+							<file>${git.repo}/com.ebay.kernel-1.0.0.jar</file>
 							<repositoryLayout>default</repositoryLayout>
 							<groupId>com.ebay.kernel</groupId>
 							<artifactId>com.ebay.kernel</artifactId>
@@ -55,7 +71,7 @@
 					<execution>
 						<id>install-dal</id>
 						<configuration>
-							<file>target/checkout/com.ebay.kerneldal-1.0.0.jar</file>
+							<file>${git.repo}/com.ebay.kerneldal-1.0.0.jar</file>
 							<repositoryLayout>default</repositoryLayout>
 							<groupId>com.ebay.kernel</groupId>
 							<artifactId>com.ebay.kerneldal</artifactId>
