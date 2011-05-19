@@ -14,7 +14,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.ebay.osgi.bundles</groupId>
-			<artifactId>bundle1</artifactId>
+			<artifactId>com.ebay.osgi.bundles.bundle1</artifactId>
 			<version>1.0.0</version>
 			<type>bundle</type>
 			<scope>compile</scope>
@@ -81,6 +81,7 @@
 						</Export-Package>
 						<Import-Package>
 							bundle1.publicapi,
+							<!--bundle1.privateapi,-->
 							org.osgi.framework,
 							org.osgi.util.tracker
 						</Import-Package>

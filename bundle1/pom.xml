@@ -12,11 +12,13 @@
 			<artifactId>org.eclipse.osgi</artifactId>
 			<version>3.6.2.R36x_v20110210</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>com.ebay.kernel</groupId>
 			<artifactId>com.ebay.kernel</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>javax.mail</artifactId>

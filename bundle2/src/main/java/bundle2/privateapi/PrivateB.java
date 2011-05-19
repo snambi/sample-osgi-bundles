@@ -16,9 +16,8 @@ public class PrivateB {
 		}
 
         // refer private classes from Bundle1
-        bundle1.privateapi.PrivateB b = new bundle1.privateapi.PrivateB();
-        b.getValue();
-        System.out.println("called getValue() ");
+        //bundle1.privateapi.PrivateB b = new bundle1.privateapi.PrivateB();
+        //System.out.println("called getValue() " + b.getStatus(10));
 		
 		return result;
 	}
