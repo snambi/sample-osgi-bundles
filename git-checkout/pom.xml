@@ -69,6 +69,22 @@
 						</goals>
 					</execution>
 					<execution>
+						<id>install-javax-mail</id>
+						<configuration>
+							<file>${git.repo}/com.springsource.javax.mail-1.4.1.jar</file>
+							<repositoryLayout>default</repositoryLayout>
+							<groupId>javax.mail</groupId>
+							<artifactId>javax.mail</artifactId>
+							<version>1.4.1</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+						<phase>process-resources</phase>
+						<goals>	
+							<goal>install-file</goal>
+						</goals>
+					</execution>
+					<execution>
 						<id>install-dal</id>
 						<configuration>
 							<file>${git.repo}/com.ebay.kerneldal-1.0.0.jar</file>
