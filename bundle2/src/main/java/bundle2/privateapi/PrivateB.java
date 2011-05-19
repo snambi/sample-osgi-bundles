@@ -14,6 +14,11 @@ public class PrivateB {
 		}else if( input < 0){
 			result = "NEGATIVE";
 		}
+
+        // refer private classes from Bundle1
+        bundle1.privateapi.PrivateB b = new bundle1.privateapi.PrivateB();
+        b.getValue();
+        System.out.println("called getValue() ");
 		
 		return result;
 	}
