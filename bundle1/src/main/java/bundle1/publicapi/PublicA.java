@@ -1,6 +1,6 @@
 package bundle1.publicapi;
 
-import com.ebay.kernel.util.RopeBuffer;
+//import com.ebay.kernel.util.RopeBuffer;
 
 import java.util.Date;
 
@@ -19,11 +19,13 @@ public class PublicA {
 		}
 
         // create a Rope buffer
+	/*
         RopeBuffer buffer = new RopeBuffer();
         buffer.append("hello");
         buffer.append("world");
 
         System.out.println("Output: " + buffer.toString());
+	*/
 
 		return result;
 	}
